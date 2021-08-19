@@ -3,6 +3,14 @@ from setuptools import setup, find_packages
 from os import path
 from locust_runner.version import __version__
 
+
+# URL to the repository on Github.
+REPO_URL = 'https://github.com/hanpeter/locust-runner'
+
+# Github will generate a tarball as long as you tag your releases, so don't
+# forget to tag!
+DOWNLOAD_URL = ''.join((REPO_URL, '/tarball/release/', __version__))
+
 try:
     with open(path.join(path.dirname(__file__), 'README.md')) as f:
         long_description = f.read()
@@ -17,6 +25,8 @@ setup(
     author_email='git@peterhan.ca',
     description='Runner for Locust.io load testing tool',
     long_description=long_description,
+    url=REPO_URL,
+    download_url=DOWNLOAD_URL,
     url='https://github.com/hanpeter/locust-runner',
     packages=find_packages(exclude=['tests']),
     license='MIT',
