@@ -10,7 +10,7 @@ ENV PYTHONFAULTHANDLER=1
 WORKDIR /locust-runner
 
 # Install dependencies
-# XXX: Copy only package.json & package-lock.json first to take
+# XXX: Copy only Pipfile & Pipfile.lock first to take
 #      advantage of Docker build cache
 COPY Pipfile* ./
 RUN pip install pipenv
