@@ -4,11 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-# XXX: Version 0.13.1 introduces `gevent==1.5a2`, which is a pre-release version
-#      I don't want to force installing pre-release versions of library, so lock
-#      `locustio` to 0.13.0 for now.
-locustio = "==0.13.0"
-pyyaml = "~=5.3"
+locust = "~=2.1.0"
+pyyaml = "~=5.4"
 
 [dev-packages]
 pytest = "*"

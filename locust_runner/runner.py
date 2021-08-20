@@ -2,7 +2,7 @@
 from __future__ import absolute_import
 import os
 import yaml
-from locust import HttpLocust, TaskSet, between
+from locust import HttpUser, TaskSet, between
 
 
 class Config(dict):
@@ -34,14 +34,12 @@ task_list = []
 for url, config in config[domain].items():
     task_list.append(task_builder(url, config))
 
-Tasks = type('Tasks', (TaskSet,), {'tasks': task_list})
-
 attributes = {
-    'task_set': Tasks,
+    'tasks': task_list,
     'wait_time': between(
         config.get('min_wait', 1), config.get('max_wait', 1)
     ),
     'host': ('https://' if config.get('ssl', True) else 'http://') + domain,
 }
 
-Locust = type('Locust', (HttpLocust,), attributes)
+User = type('User', (HttpUser,), attributes)
