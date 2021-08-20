@@ -35,13 +35,13 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
         'Topic :: Software Development :: Testing',
     ],
     install_requires=[
         'locustio'
     ],
-    python_requires='~=3.8',
+    python_requires='~=3.9',
     # Make sure the license file is packaged up too
     include_package_data=True,
 )
