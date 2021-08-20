@@ -27,7 +27,6 @@ setup(
     long_description=long_description,
     url=REPO_URL,
     download_url=DOWNLOAD_URL,
-    url='https://github.com/hanpeter/locust-runner',
     packages=find_packages(exclude=['tests']),
     license='MIT',
     classifiers=[
